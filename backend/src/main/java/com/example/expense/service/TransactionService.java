@@ -54,8 +54,8 @@ public class TransactionService {
   }
 
   // lihat transaksi (sort by date desc)
-  public List<Transactions> getAllDesc() {
-    return transactionsRepo.findAll(Sort.by("transactionTime").descending());
+  public List<Transactions> getAllDesc(Long userId) {
+    return transactionsRepo.findByUserId(userId, Sort.by(Sort.Direction.DESC, "transactionTime"));
   }
 
   // summary

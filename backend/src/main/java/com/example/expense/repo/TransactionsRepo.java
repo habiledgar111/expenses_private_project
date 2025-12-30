@@ -3,6 +3,7 @@ package com.example.expense.repo;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +16,5 @@ public interface TransactionsRepo extends JpaRepository<Transactions,Long>{
   List<Transactions> findByUserIdAndType(Long userId,TransactionType type);
   List<Transactions> findByUserIdAndTransactionTimeBetween(Long userId, LocalDateTime start, LocalDateTime end);
   List<Transactions> findByUserIdAndCategory(Long userId, String category);
+  List<Transactions> findByUserId(Long userId, Sort sort);
 }
