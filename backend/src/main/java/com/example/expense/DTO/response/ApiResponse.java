@@ -1,0 +1,13 @@
+package com.example.expense.DTO.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class ApiResponse<T> {
+  private int statusCode;
+  private String status;
+  private String message;
+  private T payload;
+}
