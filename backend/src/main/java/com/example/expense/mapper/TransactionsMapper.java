@@ -12,6 +12,5 @@ public interface TransactionsMapper {
   @Mapping(target = "id", ignore = true)
   @Mapping(target = "user", ignore = true)
   @Mapping(target = "transactionTime", expression = "java(request.getTransactionTime() != null ? request.getTransactionTime() : java.time.LocalDateTime.now())")
-  @Mapping(target = "type", expression = "java(request.getType().toUpperCase())")
   Transactions toEntity(TransactionRequest request);
 }
