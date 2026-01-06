@@ -1,16 +1,18 @@
-import Sidebar from "../component/sidebar";
+import Navbar from "../component/navbar";
+import DashboardCard from "../component/dashboardCard";
+import Table from "../component/table";
+import { Transactions } from "../dummy/tabledummy";
 
 function Dashboard() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <Sidebar />
-      <main className="pt-20 px-4">
-        <div className="grid grid-cols-3 gap-8">
-          <div>01</div>
-          <div>02</div>
-          <div>03</div>
-        </div>
-      </main>
+    <div>
+      <div className="grid grid-cols-2 gap-8 p-6">
+        <DashboardCard amount={1000} judul={"Test 1"} />
+        <DashboardCard amount={2000} judul={"Test 2"} />
+      </div>
+      <div className="mt-8 p-6">
+        <Table data={Transactions} />
+      </div>
     </div>
   );
 }

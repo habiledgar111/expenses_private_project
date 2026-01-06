@@ -1,4 +1,4 @@
-function Sidebar() {
+function Navbar({ dark, setDark }) {
   return (
     <nav className="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
       <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -52,40 +52,59 @@ function Sidebar() {
             </li>
             <li>
               <a
-                href="#"
+                href="/dashboard"
                 className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
-                About
+                Dashboard
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="/addTransaction"
                 className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
               >
-                Services
+                add transaction
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-              >
-                Contact
-              </a>
-            </li>
+            <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={dark}
+              onChange={() => setDark(!dark)}
+              className="sr-only peer"
+            />
+
+            <div className="
+              relative w-11 h-6 bg-gray-200 peer-focus:outline-none 
+              peer-focus:ring-4 peer-focus:ring-blue-300 
+              dark:peer-focus:ring-blue-800 
+              rounded-full peer 
+              dark:bg-gray-700 
+              peer-checked:after:translate-x-full 
+              peer-checked:after:border-white 
+              after:content-[''] 
+              after:absolute 
+              after:top-0.5 
+              after:left-0.5 
+              after:bg-white 
+              after:border-gray-300 
+              after:border 
+              after:rounded-full 
+              after:h-5 
+              after:w-5 
+              after:transition-all 
+              dark:border-gray-600 
+              peer-checked:bg-blue-600
+            "></div>
+
+            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+              Dark mode
+            </span>
+          </label>
           </ul>
         </div>
       </div>
     </nav>
   );
 }
-export default Sidebar;
+export default Navbar;
